@@ -5,12 +5,12 @@ description = "Recompress zip file with new compression"
 requires-python = ">=3.6"
 
 [project.scripts]
-zip-recompress = "zip-recompress:main"
+zip-recompress = "zip_recompress:main"
 
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ["zip-recompress"]
+py-modules = ["zip_recompress"]
 package-dir = {"" = "src"}
