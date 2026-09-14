@@ -121,6 +121,24 @@ class TestZipRecompress(unittest.TestCase):
                 self.assertEqual(old.extra, new.extra)
                 self.assertEqual(old.comment, new.comment)
 
+    def test_recompression_runs(self):
+        compression = zipfile.ZIP_DEFLATED
+
+        zip_recompress(
+            self.src,
+            self.recompressed,
+            compression,
+            6,
+        )
+
+        self.assertFalse(
+            filecmp.cmp(
+                self.src,
+                self.recompressed,
+                shallow=False,
+            )
+        )
+
     def test_recompression_is_idempotent(self):
         compression = zipfile.ZIP_DEFLATED
 
@@ -160,6 +178,14 @@ class TestZipRecompress(unittest.TestCase):
             self.recompressed_again,
             self.compression,
             self.compresslevel,
+        )
+
+        self.assertTrue(
+            filecmp.cmp(
+                self.src,
+                self.recompressed_again,
+                shallow=False,
+            )
         )
 
 
