@@ -1,7 +1,7 @@
 # zip-recompress
 
 This is a simple CLI utility that takes a zip file and creates a new one with
-the new compression ratio.
+the new compression.
 
 It aims for two main features
 
