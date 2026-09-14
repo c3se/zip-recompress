@@ -2,6 +2,7 @@
 import argparse
 import sys
 import zipfile
+from copy import copy
 from pathlib import Path
 
 
@@ -19,7 +20,6 @@ COMPRESSION_METHODS = {
     "zlib": zipfile.ZIP_DEFLATED,
     "bzip2": zipfile.ZIP_BZIP2,
     "lzma": zipfile.ZIP_LZMA,
-    "zstandard": zipfile.ZIP_ZSTANDARD,
 }
 try:
     COMPRESSION_METHODS["zstandard"] = zipfile.ZIP_ZSTANDARD
