@@ -1,6 +1,6 @@
 [project]
 name = "zip-recompress"
-version = "0.0.1"
+version = "0.1.0"
 description = "Recompress zip file with new compression"
 requires-python = ">=3.6"
 
